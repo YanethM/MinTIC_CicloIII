@@ -30,4 +30,27 @@
   <textarea class="form-control" aria-label="With textarea" placeholder="Sinopsis"></textarea>
 </div>
 
+<div>
+    <p>
+        Mostrar nombre pelicula en mayuscula, @function_convert_mayusc(movie)
+    </p>
+    <p>
+        Mostrar nombre pelicula en minuscula, @function_convert_minusc(movie)
+    </p>
+</div>
+
+<div>
+    <button class="btn btn-info" @onclick ="@show_console_message">Da clic</button>
+</div>
+
+@code{
+    string movie = "Spyderman";
+    @* Estructura de función flecha *@
+    string function_convert_mayusc(string valor) => valor.ToUpper();
+    string function_convert_minusc(string valor) => valor.ToLower();
+
+    public void show_console_message(){
+        Console.WriteLine("Has dado clic en el botón");
+    }
+}
 

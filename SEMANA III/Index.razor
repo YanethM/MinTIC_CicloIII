@@ -1,0 +1,61 @@
+@page "/"
+
+<div class="form-label">
+    <label>Formulario pelicula</label>
+</div>
+
+
+<div>
+    @* Primero se debe de crear la fila, dentro de ella las columnas *@
+    <div class="mb-3">
+        <input class="form-control form-control" type="text" placeholder="Nombre película"
+            aria-label=".form-control-sm example">
+    </div>
+    @* Fila 2: una fila con dos columnas en pantalla mediana y grande
+        en pantalla pequeña se visualizara como dos filas con una columna c/u *@
+    <div class="mb-3">
+        @* Columna 1 *@
+        <select class="form-select">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        @* Columna 2 *@
+        <input class="form-control form-control" type="number" placeholder="Puntuación"
+            aria-label=".form-control-sm example">
+
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1"
+            placeholder="correo_electronico@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div>
+        <p>Hola, @funcion_flecha(nombre_pelicula)</p>
+        <p>Hola, @funcion_flecha_2(nombre_pelicula)</p>
+    </div>
+
+    <div>
+        <button class="btn btn-outline-primary" type="button" @onclick="@ConsultarMensajeConsola"> Clic me</button>
+        <button class="btn btn-danger" type="button" @onclick="@ConsultarMensajeConsola"> Clic me</button>
+        <button class="btn btn-info" type="button" @onclick="@ConsultarMensajeConsola"> Clic me</button>
+        <button class="btn btn-success" type="button" @onclick="@ConsultarMensajeConsola"> Clic me</button>
+        <button class="btn btn-alert" type="button" @onclick="@ConsultarMensajeConsola"> Clic me</button>
+    </div>
+</div>
+@code {
+    string nombre_pelicula = "Misión TIC 2022";
+    @* Función flecha *@
+    string funcion_flecha(string valor) => valor.ToUpper();
+    string funcion_flecha_2(string valor) => valor.ToLower();
+    private void ConsultarMensajeConsola()
+    {
+        Console.WriteLine("Validando evento clic del botón");
+    }
+}

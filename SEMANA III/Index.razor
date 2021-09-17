@@ -1,60 +1,23 @@
 @page "/"
+@* Para hacer comentarios en el código se utiliza: Shift + Alt + A *@
+@* Titulos que varian en el tamaño de la fuente entre mayor sea el valor de la h*@
+<h1>Hello, world!</h1>
+<h2>Hello, world!</h2>
+<h3>Hello, world!</h3>
+<h4>Hello, world!</h4>
+<h5>Hello, world!</h5>
+<h6>Hello, world!</h6>
 
-<div class="form-label">
-    <label>Formulario pelicula</label>
+@* Código HTML se debe de trabajar por bloques o divisiones *@
+
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Película" aria-describedby="basic-addon1">
 </div>
 
-
-<div>
-    @* Primero se debe de crear la fila, dentro de ella las columnas *@
-    <div class="mb-3">
-        <input class="form-control form-control" type="text" placeholder="Nombre película"
-            aria-label=".form-control-sm example">
-    </div>
-    @* Fila 2: una fila con dos columnas en pantalla mediana y grande
-        en pantalla pequeña se visualizara como dos filas con una columna c/u *@
-    <div class="mb-3">
-        @* Columna 1 *@
-        <select class="form-select">
-            <option selected>Selecciona el género de la película</option>
-            <option value="1">Acción</option>
-            <option value="2">Drama</option>
-            <option value="3">Suspenso</option>
-            <option value="4">Terror</option>
-        </select>
-    </div>
-    <div class="mb-3">
-        @* Columna 2 *@
-        <input class="form-control form-control" type="number" placeholder="Puntuación"
-            aria-label=".form-control-sm example">
-    </div>
-
-
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Género" aria-describedby="basic-addon1">
 </div>
 
-<div class="mb-3">
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="correo_electronico@example.com">
+<div class="input-group mb-3">
+    <input type="number" class="form-control" placeholder="Puntuación usuario" aria-describedby="basic-addon1">
 </div>
-<div class="mb-3">
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
-<div>
-    <p>Hola, @funcion_flecha(nombre_pelicula)</p>
-    <p>Hola, @funcion_flecha_2(nombre_pelicula)</p>
-</div>
-
-<div>
-    <button class="btn btn-primary" type="button" @onclick="@ConsultarMensajeConsola"> Aceptar</button>
-    <button class="btn btn-danger" type="button" @onclick="@ConsultarMensajeConsola"> Cancelar</button>
-    
-</div>
-@code {
-    string nombre_pelicula = "Misión TIC 2022";
-    @* Función flecha *@
-    string funcion_flecha(string valor) => valor.ToUpper();
-    string funcion_flecha_2(string valor) => valor.ToLower();
-    private void ConsultarMensajeConsola()
-    {
-        Console.WriteLine("Validando evento clic del botón");
-    }
-}

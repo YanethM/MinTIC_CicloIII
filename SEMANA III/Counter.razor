@@ -9,8 +9,8 @@
         <div class="card mb-3 h-100" style="width: 18rem;">
             <img src="/Images/darth.jpg" class="card-img-top" alt="..." width="20" height="400">
             <div class="card-body">
-                <h5 class="card-title">@movie1</h5>
-                <p class="card-text">@sinopsis_movie1</p>
+                <h5 class="card-title">@FunctionsArrowsClass.function_convert_mayusc(movie1)</h5>
+                <p class="card-text">@FunctionsArrowsClass.function_convert_minusc(sinopsis_movie1)</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
@@ -20,8 +20,8 @@
         <div class="card mb-3 h-100" style="width: 18rem;">
             <img src="/Images/marvel.jpg" class="card-img-top" alt="..." width="20" height="400">
             <div class="card-body">
-                <h5 class="card-title">@movie2</h5>
-                <p class="card-text">@sinopsis_movie2</p>
+                <h5 class="card-title">@FunctionsArrowsClass.function_convert_mayusc(movie2)</h5>
+                <p class="card-text">@FunctionsArrowsClass.function_convert_minusc(sinopsis_movie2)</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
@@ -31,32 +31,20 @@
         <div class="card mb-3 h-100" style="width: 18rem;">
             <img src="/Images/spyderman.jpg" class="card-img-top" alt="..." width="20" height="400">
             <div class="card-body">
-                <h5 class="card-title">@movie3</h5>
-                <p class="card-text">@sinopsis_movie3</p>
+                <h5 class="card-title">@FunctionsArrowsClass.function_convert_mayusc(movie3)</h5>
+                <p class="card-text">@FunctionsArrowsClass.function_convert_minusc(sinopsis_movie3)</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </div>
 </div>
 
-<div>
-    <label class="form-label">Pelicula 1 @FunctionsArrowsClass.function_convert_mayusc(movie1)</label>
-    <br>
-    <label class="form-label">Pelicula 2 @FunctionsArrowsClass.function_convert_minusc(movie2)</label>
-</div>
 @code {
+    @* Declara los parametros que recibiran las funciones flecha de la clase FunctionsArrowsClass *@
     public string movie1 = "Star wars";
     public string movie2 = "Avengers";
     public string movie3 = "Spiderman";
     public string sinopsis_movie1 = "Sinopsis STAR WARS";
     public string sinopsis_movie2 = "Sinopsis Avengers";
     public string sinopsis_movie3 = "Sinopsis Spiderman";
-
-    @* Declaración de una clase *@
-    public class FunctionsArrowsClass
-    {
-        @* Funciones flecha estructura: variable(parametros) => instrucciones; *@
-        public static string function_convert_mayusc(string value) => value.ToUpper();
-        public static string function_convert_minusc(string value) => value.ToLower();
-    }
 }

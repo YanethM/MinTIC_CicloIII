@@ -44,11 +44,6 @@
     <br>
     <label class="form-label">Pelicula 2 @FunctionsArrowsClass.function_convert_minusc(movie2)</label>
 </div>
-
-<div>
-    <button class="btn btn-info" @onclick="@clic_event_button">Da clic</button>
-    <button class="btn btn-danger" @onclick="@clic_event_cancel">Cancelar</button>
-</div>
 @code {
     public string movie1 = "Star wars";
     public string movie2 = "Avengers";
@@ -61,17 +56,7 @@
     public class FunctionsArrowsClass
     {
         @* Funciones flecha estructura: variable(parametros) => instrucciones; *@
-        public string function_convert_mayusc(string value) => value.ToUpper();
-        public string function_convert_minusc(string value) => value.ToLower();
-    }
-
-    @* Crear métodos *@
-    public void clic_event_button()
-    {
-        Console.WriteLine("Has dado clic en el botón");
-    }
-    public void clic_event_cancel()
-    {
-        Console.WriteLine("Cancelaste el proceso");
+        public static string function_convert_mayusc(string value) => value.ToUpper();
+        public static string function_convert_minusc(string value) => value.ToLower();
     }
 }
